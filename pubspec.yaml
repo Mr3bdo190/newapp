@@ -1,5 +1,5 @@
 name: social_app
-description: A new Flutter project.
+description: A new high-end Flutter social media project.
 publish_to: 'none'
 version: 1.0.0+1
 environment:
@@ -7,5 +7,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cupertino_icons: ^1.0.3
 flutter:
   uses-material-design: true
