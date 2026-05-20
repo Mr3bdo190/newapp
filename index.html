@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Home Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#1b1b1b",
+                      "surface-tint": "#6750a4",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary": "#765b00",
+                      "surface-variant": "#e2e2e2",
+                      "secondary-fixed": "#e0e2e6",
+                      "on-secondary-fixed": "#191c1f",
+                      "surface-container": "#eeeeee",
+                      "background": "#f9f9f9",
+                      "on-surface-variant": "#494551",
+                      "inverse-surface": "#303030",
+                      "tertiary-container": "#c9a74d",
+                      "primary": "#4f378a",
+                      "secondary-fixed-dim": "#c4c7ca",
+                      "inverse-on-surface": "#f1f1f1",
+                      "on-primary-container": "#e0d2ff",
+                      "error": "#ba1a1a",
+                      "on-secondary": "#ffffff",
+                      "surface-bright": "#f9f9f9",
+                      "primary-container": "#6750a4",
+                      "on-tertiary-fixed": "#241a00",
+                      "error-container": "#ffdad6",
+                      "surface": "#f9f9f9",
+                      "secondary-container": "#dee0e4",
+                      "on-tertiary-fixed-variant": "#594400",
+                      "secondary": "#5c5f62",
+                      "tertiary-fixed": "#ffdf93",
+                      "surface-container-high": "#e8e8e8",
+                      "on-error-container": "#93000a",
+                      "primary-fixed": "#e9ddff",
+                      "outline-variant": "#cbc4d2",
+                      "on-primary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-container": "#503d00",
+                      "surface-dim": "#dadada",
+                      "on-secondary-container": "#606366",
+                      "on-background": "#1b1b1b",
+                      "inverse-primary": "#cfbcff",
+                      "primary-fixed-dim": "#cfbcff",
+                      "on-primary-fixed": "#22005d",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#f3f3f3",
+                      "tertiary-fixed-dim": "#e7c365",
+                      "on-primary-fixed-variant": "#4f378a",
+                      "on-secondary-fixed-variant": "#44474a",
+                      "outline": "#7a7582",
+                      "surface-container-highest": "#e2e2e2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-sm": "8px",
+                      "stack-md": "16px",
+                      "unit": "4px",
+                      "margin-page": "16px",
+                      "gutter-grid": "12px",
+                      "stack-lg": "24px"
+              },
+              "fontFamily": {
+                      "body-sm": ["Hanken Grotesk"],
+                      "body-md": ["Hanken Grotesk"],
+                      "label-sm": ["Hanken Grotesk"],
+                      "headline-sm": ["Hanken Grotesk"],
+                      "display-lg": ["Hanken Grotesk"],
+                      "label-lg": ["Hanken Grotesk"],
+                      "display-lg-mobile": ["Hanken Grotesk"]
+              },
+              "fontSize": {
+                      "body-sm": ["15px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "body-md": ["17px", {"lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                      "label-sm": ["11px", {"lineHeight": "13px", "letterSpacing": "0.06em", "fontWeight": "500"}],
+                      "headline-sm": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "display-lg": ["34px", {"lineHeight": "41px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "label-lg": ["13px", {"lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                      "display-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "800"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbar for stories */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen pb-20">
+<!-- TopAppBar -->
+<header class="bg-white/80 dark:bg-on-surface/80 backdrop-blur-xl fixed top-0 left-0 w-full z-50 border-b border-secondary-fixed/50 dark:border-outline-variant/30 flex justify-between items-center px-margin-page h-14 transition-transform duration-150 active:scale-95">
+<button class="text-on-surface dark:text-inverse-on-surface hover:opacity-70 transition-opacity flex items-center justify-center w-10 h-10">
+<span class="material-symbols-outlined">camera_alt</span>
+</button>
+<h1 class="font-display-lg-mobile text-display-lg-mobile font-extrabold text-primary dark:text-inverse-primary tracking-tight">Aspirational</h1>
+<button class="text-on-surface dark:text-inverse-on-surface hover:opacity-70 transition-opacity flex items-center justify-center w-10 h-10">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="max-w-[600px] mx-auto mt-14 pt-stack-md px-margin-page">
+<!-- Stories Section -->
+<section class="flex gap-4 overflow-x-auto no-scrollbar pb-4 snap-x border-b border-secondary-fixed/30 mb-stack-lg">
+<!-- Story Item (Active/Unseen) -->
+<div class="flex flex-col items-center gap-1 snap-start flex-shrink-0 cursor-pointer group">
+<div class="w-16 h-16 rounded-full p-[2px] bg-gradient-to-tr from-primary-fixed to-primary">
+<div class="w-full h-full rounded-full border-2 border-white bg-white overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="A close-up portrait of a young woman with a confident expression, bathed in soft, diffused natural light that complements a high-end, bright aesthetic. The background is slightly blurred and pristine, emphasizing a modern, aspirational lifestyle look suitable for a premium social media platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjQDWt8VPm0QCJqrxhQJhuJr9kHwmEzjN4XtxdWtdzFU3ejCuypADEslIDrCP3X8nO-zH22k6IE2PRo941S-0UbIxGzW4ilPAESU-r63msTLcqA2keXpx-OF2R5769kWB36yfn5DjhQNo1xlhfeRBvvB1HVQvr-qlh-Yq2hi1EHgQja32pjTFCEngoyD9fWACt4myGvE2DnpOyuqK5aoo-_uS5AoxzTnLp3-hFlaPKhrUrKRpiDdbHK6GxIndFf7FxPPwfsLXeFk0"/>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">Your Story</span>
+</div>
+<!-- Story Item (Active/Unseen) -->
+<div class="flex flex-col items-center gap-1 snap-start flex-shrink-0 cursor-pointer group">
+<div class="w-16 h-16 rounded-full p-[2px] bg-gradient-to-tr from-primary-fixed to-primary">
+<div class="w-full h-full rounded-full border-2 border-white bg-white overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="A stylish male model looking thoughtfully off-camera, wearing minimalist contemporary clothing. The lighting is bright and clean, typical of a high-end editorial shoot, set against a pristine white background. The image exudes a sophisticated, modern, and energetic vibe perfect for a luxury digital feed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAsMw0ceUe6r8irL7T5SHxmdT6fxngReA75mD-z-yBbuxuLeh9k2ErWrpnPSVI9PkZxUE0GdH0mFDBj_RtXs-Y7OHsm-_mvVi34_HPA7Kh6r7HwCmX1gKvO64LMkBFW1fp2cZTZxpu68dIP8Pr83dTvgJCIWlg_HgwBSnYSwKXpACnVHdUMo4qt3vGWqbPG-vwlSdr3Yz7tebMeXESJWh3voWeG4H_yAHRPh9fcs9n2oTTWUySrZitz9eAo2KD_zoQwZGUv5UR-jk"/>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">Alex M.</span>
+</div>
+<!-- Story Item (Inactive/Seen) -->
+<div class="flex flex-col items-center gap-1 snap-start flex-shrink-0 cursor-pointer group opacity-80">
+<div class="w-16 h-16 rounded-full p-[2px] bg-secondary-fixed">
+<div class="w-full h-full rounded-full border-2 border-white bg-white overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="A candid shot of a person smiling warmly, set in a brightly lit, minimalist indoor environment. The colors are muted yet crisp, featuring soft whites and light silvers. The overall mood is approachable, elegant, and perfectly aligned with a premium, glassmorphic UI design language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrC8q5rz9JLW4jR5ieQv8-pT0TJIWSW3MAS3nxU08zzbGdfzpJ7BSNK23DPFPO0TwgMD9mI5Ju0MN76RxC8AbiLmzhzYPY3zsrTckZfOb8WxIuko_YmKQfjmlVWYyurfAI1nYj-aI8BzfaMCG-2S6JqDcGMYKyRZH5tHEyGoDAddxGoyW0lVB8P0UhjhaBTWM1TqJ-yTNPzFdqu3PV4ubC3uLQIfSJKpYSYrVjrk7Roiq_OT64yvgyMQKhNwZYfu1I2mlE0iz-LcU"/>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sarah J.</span>
+</div>
+<!-- Story Item (Inactive/Seen) -->
+<div class="flex flex-col items-center gap-1 snap-start flex-shrink-0 cursor-pointer group opacity-80">
+<div class="w-16 h-16 rounded-full p-[2px] bg-secondary-fixed">
+<div class="w-full h-full rounded-full border-2 border-white bg-white overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="A portrait of a creative professional standing near a large window, with abundant soft daylight illuminating their features. The setting is a minimalist studio with subtle silver accents. The image conveys clarity, modern elegance, and a polished digital optimism suitable for an aspirational app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsJiRrM6OCA-loEGojLWwcDMP2Ge3s17BK3RBfEWnr5zTqGAX7mOQhFp3BYklpSC59Yk_pf_v0FfLCw8pPB3KTkh3XYczecuX2c8tRlhwgeD-pm43u9NRBWFFAjYTTq6SVsjMyECoUM4r1vktaiYe2pNO-PeMOnQSPwvZvePCiQ-Eo6ljQt9mdnOEmEnfK3SYSLfOmH4FyXS3D84MI4EwXg2hJP_bBS951s-b9v3Jbb44MBAJq9XkTVGse_tw-uRk7gB5bCa-1NXw"/>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Chris T.</span>
+</div>
+</section>
+<!-- Feed Posts -->
+<div class="flex flex-col gap-stack-lg">
+<!-- Post Card 1 -->
+<article class="bg-surface-container-lowest border border-secondary-fixed/60 rounded-xl overflow-hidden shadow-[0px_8px_24px_rgba(0,0,0,0.06)]">
+<!-- Post Header -->
+<div class="flex items-center justify-between p-stack-md">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden">
+<img alt="Alex M." class="w-full h-full object-cover" data-alt="A stylish male model looking thoughtfully off-camera, wearing minimalist contemporary clothing. The lighting is bright and clean, typical of a high-end editorial shoot, set against a pristine white background. The image exudes a sophisticated, modern, and energetic vibe perfect for a luxury digital feed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdc3O0OHMJgPmLPEMRWcvW0t3d6yIAzqLEbOCEU8UID1SfX7i4qx7JYnKfwJWWyCom6axJx5IskJbaiOD_jmz1qADJNKxzb9e4GBNI2eCyROxFB7rqjQ-adHcYl4xg_pVw2P7iMfBXkeVoh6ZX98R6KanRfeiEdVDv24WtQ_C82L7-eJCRd30f7L3oB3itZ0aKNDz1WcBzXS3GRYnRksRg2YHdO9NsMwFXov3vOrAPqxpaOGwFPsCguNBFw0RgXlb23vCrJduQsrY"/>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">Alex M.</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">2 hours ago</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<!-- Post Image -->
+<div class="w-full aspect-square bg-surface-variant relative group">
+<img alt="Post content" class="w-full h-full object-cover" data-alt="A breathtaking view of a minimalist modern architectural structure featuring clean, crisp lines and expansive glass windows. The building is bathed in bright, natural sunlight under a clear sky, highlighting the pristine white materials and subtle silver metal accents. The composition is highly aesthetic, evoking a sense of premium lifestyle and digital optimism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa6pp8npYI3K5E_bFnIkhdMGsPnJmsvh1NgBZKg8Mis4dg2g15m7tjahRYBwoFLAbYi4yWr61vkBmiUyaMZTkSeiFp1oMkrDgvloHDwUcIvewAiV5mjFZO0GALdaEOgvR3A3rI1G2QXSVHvQsAGlO7yequxHtYTU1ZwYTJMDdYE61zqpwR7MlbRZ5mHwqkFUSJWcPxKNBHNvtIOo8XpBQ9qdb-A88KKQuVWNPlexxVxpeXOdOf6-whwZ8Tz9kepC4szpSWyiVYwwg"/>
+<!-- Glassmorphic Overlay Actions (Hover) -->
+<div class="absolute bottom-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="w-10 h-10 rounded-full bg-white/60 backdrop-blur-md flex items-center justify-center text-on-surface hover:bg-white/80 transition-colors shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</div>
+<!-- Post Actions & Caption -->
+<div class="p-stack-md pt-3">
+<div class="flex items-center justify-between mb-3">
+<div class="flex gap-4">
+<button class="text-primary hover:opacity-80 transition-opacity flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-lg text-label-lg">1.2k</span>
+</button>
+<button class="text-on-surface hover:text-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-lg text-label-lg">48</span>
+</button>
+<button class="text-on-surface hover:text-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+<button class="text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+<div class="font-body-md text-body-md text-on-surface">
+<span class="font-label-lg text-label-lg mr-1">Alex M.</span>
+                        Embracing the calm of minimalist design today. The intersection of light and structure here is incredible. ✨
+                    </div>
+<button class="font-label-sm text-label-sm text-on-surface-variant mt-2 hover:text-on-surface transition-colors">
+                        View all 48 comments
+                    </button>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-white/80 dark:bg-on-surface/80 backdrop-blur-xl fixed bottom-0 w-full z-50 pb-safe border-t border-secondary-fixed/50 dark:border-outline-variant/30 shadow-lg dark:shadow-none flex justify-around items-center h-16 px-4">
+<!-- Active Item -->
+<button class="flex flex-col items-center justify-center text-primary dark:text-inverse-primary scale-110 transition-all duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+</button>
+<!-- Inactive Items -->
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container/30 dark:hover:bg-surface-container-highest/10 rounded-full w-12 h-12 transition-all duration-200 hover:opacity-70">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container/30 dark:hover:bg-surface-container-highest/10 rounded-full w-12 h-12 transition-all duration-200 hover:opacity-70">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container/30 dark:hover:bg-surface-container-highest/10 rounded-full w-12 h-12 transition-all duration-200 hover:opacity-70 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border border-white"></span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container/30 dark:hover:bg-surface-container-highest/10 rounded-full w-12 h-12 transition-all duration-200 hover:opacity-70">
+<span class="material-symbols-outlined">person</span>
+</button>
+</nav>
+</body></html>

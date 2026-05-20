@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Aspirational Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#1b1b1b",
+                      "surface-tint": "#6750a4",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary": "#765b00",
+                      "surface-variant": "#e2e2e2",
+                      "secondary-fixed": "#e0e2e6",
+                      "on-secondary-fixed": "#191c1f",
+                      "surface-container": "#eeeeee",
+                      "background": "#f9f9f9",
+                      "on-surface-variant": "#494551",
+                      "inverse-surface": "#303030",
+                      "tertiary-container": "#c9a74d",
+                      "primary": "#4f378a",
+                      "secondary-fixed-dim": "#c4c7ca",
+                      "inverse-on-surface": "#f1f1f1",
+                      "on-primary-container": "#e0d2ff",
+                      "error": "#ba1a1a",
+                      "on-secondary": "#ffffff",
+                      "surface-bright": "#f9f9f9",
+                      "primary-container": "#6750a4",
+                      "on-tertiary-fixed": "#241a00",
+                      "error-container": "#ffdad6",
+                      "surface": "#f9f9f9",
+                      "secondary-container": "#dee0e4",
+                      "on-tertiary-fixed-variant": "#594400",
+                      "secondary": "#5c5f62",
+                      "tertiary-fixed": "#ffdf93",
+                      "surface-container-high": "#e8e8e8",
+                      "on-error-container": "#93000a",
+                      "primary-fixed": "#e9ddff",
+                      "outline-variant": "#cbc4d2",
+                      "on-primary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-container": "#503d00",
+                      "surface-dim": "#dadada",
+                      "on-secondary-container": "#606366",
+                      "on-background": "#1b1b1b",
+                      "inverse-primary": "#cfbcff",
+                      "primary-fixed-dim": "#cfbcff",
+                      "on-primary-fixed": "#22005d",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#f3f3f3",
+                      "tertiary-fixed-dim": "#e7c365",
+                      "on-primary-fixed-variant": "#4f378a",
+                      "on-secondary-fixed-variant": "#44474a",
+                      "outline": "#7a7582",
+                      "surface-container-highest": "#e2e2e2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px",
+                      "2xl": "1rem",
+                      "3xl": "1.5rem"
+              },
+              "spacing": {
+                      "stack-sm": "8px",
+                      "stack-md": "16px",
+                      "unit": "4px",
+                      "margin-page": "16px",
+                      "gutter-grid": "12px",
+                      "stack-lg": "24px",
+                      "safe": "env(safe-area-inset-bottom)"
+              },
+              "fontFamily": {
+                      "body-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-lg-mobile": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "body-sm": [
+                              "15px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "17px",
+                              {
+                                      "lineHeight": "22px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "11px",
+                              {
+                                      "lineHeight": "13px",
+                                      "letterSpacing": "0.06em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-sm": [
+                              "22px",
+                              {
+                                      "lineHeight": "28px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "34px",
+                              {
+                                      "lineHeight": "41px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-lg": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "34px",
+                                      "fontWeight": "800"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        .chat-gradient {
+            background: linear-gradient(135deg, #00F0FF 0%, #8A2BE2 100%);
+        }
+
+        .typing-dot {
+            animation: typing 1.4s infinite ease-in-out both;
+        }
+
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0); opacity: 0.3; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased font-body-md min-h-screen flex flex-col overflow-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-on-surface/80 backdrop-blur-xl border-b border-secondary-fixed/50 dark:border-outline-variant/30 flex justify-between items-center px-margin-page h-14 w-full">
+<button class="text-primary dark:text-inverse-primary hover:opacity-70 transition-opacity active:scale-95 duration-150 p-2 -ml-2 rounded-full focus:outline-none focus:ring-2 focus:ring-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back_ios</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm-mobile md:text-headline-sm font-extrabold text-primary dark:text-inverse-primary truncate max-w-[60%] text-center">
+            Aspirational
+        </h1>
+<button class="text-primary dark:text-inverse-primary hover:opacity-70 transition-opacity active:scale-95 duration-150 p-2 -mr-2 rounded-full focus:outline-none focus:ring-2 focus:ring-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_circle</span>
+</button>
+</header>
+<!-- Main Chat Canvas -->
+<main class="flex-1 overflow-y-auto no-scrollbar pt-20 pb-24 px-margin-page flex flex-col gap-stack-md" id="chat-container">
+<!-- Date Header -->
+<div class="flex justify-center my-stack-sm">
+<span class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container-low px-3 py-1 rounded-full border border-secondary-fixed/50">
+                Today, 9:41 AM
+            </span>
+</div>
+<!-- Incoming Message (Other) -->
+<div class="flex flex-col items-start gap-1 max-w-[85%]">
+<div class="bg-surface-container text-on-surface px-4 py-3 rounded-2xl rounded-tl-sm border border-secondary-fixed/50 shadow-sm relative group">
+<p class="font-body-md text-body-md m-0">Hey! Did you check out the new design concepts?</p>
+</div>
+<span class="text-[10px] text-on-surface-variant/70 ml-1">9:41 AM</span>
+</div>
+<!-- Outgoing Message (User) -->
+<div class="flex flex-col items-end gap-1 max-w-[85%] self-end">
+<div class="chat-gradient text-white px-4 py-3 rounded-2xl rounded-tr-sm shadow-md">
+<p class="font-body-md text-body-md m-0">Yes, they look incredibly clean. The glassmorphism effect is spot on.</p>
+</div>
+<span class="text-[10px] text-on-surface-variant/70 mr-1">9:42 AM · Read</span>
+</div>
+<!-- Outgoing Message with Rich Media Preview -->
+<div class="flex flex-col items-end gap-1 max-w-[85%] self-end">
+<div class="chat-gradient text-white p-2 rounded-2xl rounded-tr-sm shadow-md">
+<div class="relative w-full aspect-video rounded-xl overflow-hidden mb-2 bg-black/10">
+<img alt="Abstract 3D rendering of frosted glass shapes and spheres floating in a bright, minimalist white space with subtle neon cyan reflections." class="w-full h-full object-cover" data-alt="A striking digital installation art piece featuring glowing, generative geometric shapes suspended in a vast, minimalist gallery space. The room is illuminated by high-key, soft white lighting that creates a bright, modern light-mode aesthetic. The artwork relies on a sophisticated palette of deep blacks and pristine whites, punctuated by intense accents of vibrant red. The mood is serene yet technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVetWdKiWfwePcg4xPrw6Oqfl7Y96WY8XDpOcSjq_EZVDOUzX4cn4FoDD_ogiRAE0yraHE4grW99jDFUYuuFf5GxZYgraLFde2RixKEUj_v_bmwFNOlWIPIeJ5TxFaplQ_a4tHzVWLkumXO4sD8MplSgaEKXqw5Tx05AERPRUAAYMxZ2Mwdz3NXjOFHROit_GlQ2TzStKyZ8I3vijOONTh32RjJq6lgATXIMaEmmF5zRhcnxZE08ryqD-v9CzM-MoHsOG-qTtAT2w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-3">
+<span class="text-white font-label-sm text-label-sm drop-shadow-md">concept_v2.png</span>
+</div>
+</div>
+<p class="font-body-md text-body-md m-0 px-2 pb-1">Thinking we go with this direction for the hero section.</p>
+</div>
+<span class="text-[10px] text-on-surface-variant/70 mr-1">9:45 AM · Read</span>
+</div>
+<!-- Incoming Message (Other) -->
+<div class="flex flex-col items-start gap-1 max-w-[85%]">
+<div class="bg-surface-container text-on-surface px-4 py-3 rounded-2xl rounded-tl-sm border border-secondary-fixed/50 shadow-sm">
+<p class="font-body-md text-body-md m-0">Love that. The lighting is super premium.</p>
+</div>
+</div>
+<!-- Typing Indicator -->
+<div class="flex flex-col items-start gap-1 max-w-[85%] mt-2" id="typing-indicator">
+<div class="bg-surface-container px-4 py-3 rounded-2xl rounded-tl-sm border border-secondary-fixed/50 shadow-sm flex items-center gap-1 h-10">
+<div class="w-2 h-2 bg-on-surface-variant/50 rounded-full typing-dot"></div>
+<div class="w-2 h-2 bg-on-surface-variant/50 rounded-full typing-dot"></div>
+<div class="w-2 h-2 bg-on-surface-variant/50 rounded-full typing-dot"></div>
+</div>
+</div>
+<!-- Spacer for auto-scroll -->
+<div class="h-1" id="scroll-anchor"></div>
+</main>
+<!-- Minimalist Input Bar -->
+<footer class="fixed bottom-0 left-0 w-full z-50 bg-white/80 dark:bg-on-surface/80 backdrop-blur-xl border-t border-secondary-fixed/50 dark:border-outline-variant/30 pb-safe">
+<div class="flex items-center gap-2 px-margin-page py-3">
+<button class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-surface-container text-primary hover:bg-surface-container-high transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">add</span>
+</button>
+<div class="flex-1 relative">
+<input class="w-full bg-surface-container border border-secondary-fixed/50 text-on-surface font-body-md text-body-md rounded-full py-2.5 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent placeholder:text-on-surface-variant/60 transition-shadow" placeholder="Message..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-primary/70 hover:text-primary transition-colors focus:outline-none">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">photo_camera</span>
+</button>
+</div>
+<button class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full chat-gradient text-white shadow-md hover:opacity-90 active:scale-95 transition-all focus:outline-none focus:ring-2 focus:ring-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</footer>
+<script>
+        // Auto-scroll to bottom on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const anchor = document.getElementById('scroll-anchor');
+            if(anchor) anchor.scrollIntoView();
+            
+            // Simple interaction demo: click send to hide typing indicator and scroll
+            const sendBtn = document.querySelector('button .material-symbols-outlined:contains("send")')?.parentElement;
+            if(sendBtn) {
+                sendBtn.addEventListener('click', () => {
+                    const typing = document.getElementById('typing-indicator');
+                    if(typing) typing.style.display = 'none';
+                });
+            }
+        });
+    </script>
+</body></html>

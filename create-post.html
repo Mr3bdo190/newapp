@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Create Post - Aspirational Social</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Hanken Grotesk (Brand Font) & Be Vietnam Pro (Requested) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed-variant": "#594400",
+                        "on-surface-variant": "#494551",
+                        "primary": "#4f378a",
+                        "surface-container": "#eeeeee",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface": "#f9f9f9",
+                        "tertiary": "#765b00",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#303030",
+                        "surface-dim": "#dadada",
+                        "on-tertiary-fixed": "#241a00",
+                        "secondary": "#5c5f62",
+                        "on-secondary-fixed": "#191c1f",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#c4c7ca",
+                        "on-surface": "#1b1b1b",
+                        "surface-tint": "#6750a4",
+                        "outline-variant": "#cbc4d2",
+                        "on-background": "#1b1b1b",
+                        "on-secondary-container": "#606366",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary-fixed-variant": "#4f378a",
+                        "outline": "#7a7582",
+                        "tertiary-container": "#c9a74d",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#44474a",
+                        "background": "#f9f9f9",
+                        "on-tertiary-container": "#503d00",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#cfbcff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#dee0e4",
+                        "on-primary-container": "#e0d2ff",
+                        "surface-container-low": "#f3f3f3",
+                        "surface-bright": "#f9f9f9",
+                        "primary-fixed": "#e9ddff",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#cfbcff",
+                        "error": "#ba1a1a",
+                        "primary-container": "#6750a4",
+                        "on-primary-fixed": "#22005d",
+                        "tertiary-fixed-dim": "#e7c365",
+                        "inverse-on-surface": "#f1f1f1",
+                        "secondary-fixed": "#e0e2e6",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#ffdf93"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "stack-lg": "24px",
+                        "unit": "4px",
+                        "gutter-grid": "12px",
+                        "stack-md": "16px",
+                        "margin-page": "16px",
+                        "stack-sm": "8px"
+                    },
+                    fontFamily: {
+                        "headline-sm": ["Hanken Grotesk"],
+                        "body-sm": ["Be Vietnam Pro", "sans-serif"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "body-md": ["Be Vietnam Pro", "sans-serif"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"]
+                    },
+                    fontSize: {
+                        "headline-sm": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-sm": ["15px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-sm": ["11px", { "lineHeight": "13px", "letterSpacing": "0.06em", "fontWeight": "500" }],
+                        "body-md": ["17px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "display-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "800" }],
+                        "display-lg": ["34px", { "lineHeight": "41px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    },
+                    backgroundImage: {
+                        'neon-gradient': 'linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #4f378a 100%)'
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: theme('colors.background');
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .hanken-font {
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+        }
+        
+        /* Hide scrollbar for clean UI */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background min-h-screen flex flex-col pb-safe">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-on-surface/80 backdrop-blur-xl flex justify-between items-center px-margin-page h-14 border-b border-secondary-fixed/50 dark:border-outline-variant/30">
+<button class="text-on-surface-variant hover:opacity-70 transition-opacity active:scale-95 duration-150 flex items-center">
+<span class="font-body-md text-body-md text-secondary">Cancel</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm-mobile md:text-headline-sm text-on-surface text-center hanken-font">New Post</h1>
+<button class="bg-neon-gradient text-white px-4 py-1.5 rounded-full font-label-lg text-label-lg hover:opacity-90 active:scale-95 transition-all shadow-[0_4px_12px_rgba(79,172,254,0.3)] hanken-font">
+            Post
+        </button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-16 pb-24 px-margin-page max-w-[600px] mx-auto w-full flex flex-col gap-stack-lg">
+<!-- Media Upload Area (Glassmorphism) -->
+<div class="glass-panel rounded-3xl aspect-square flex flex-col items-center justify-center cursor-pointer group relative overflow-hidden transition-all duration-300 hover:shadow-[0_12px_40px_rgba(79,172,254,0.15)] mt-stack-sm">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-low/50 to-surface-container/20"></div>
+<div class="z-10 flex flex-col items-center gap-stack-sm text-primary transition-transform duration-300 group-hover:scale-110 group-active:scale-95">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 0;">add_photo_alternate</span>
+</div>
+<span class="font-label-lg text-label-lg hanken-font">Tap to add media</span>
+</div>
+<!-- Optional: Blurred decorative blob behind -->
+<div class="absolute top-1/4 left-1/4 w-32 h-32 bg-cyan-400/20 rounded-full blur-3xl mix-blend-multiply"></div>
+<div class="absolute bottom-1/4 right-1/4 w-32 h-32 bg-purple-400/20 rounded-full blur-3xl mix-blend-multiply"></div>
+</div>
+<!-- Caption Input -->
+<div class="flex gap-gutter-grid items-start bg-white rounded-2xl p-stack-md border border-surface-container-highest shadow-sm">
+<img alt="Profile" class="w-10 h-10 rounded-full object-cover shrink-0" data-alt="A close-up portrait of a young person with clear skin, looking directly at the camera. The lighting is soft and natural, emphasizing a clean, modern aesthetic suitable for a high-end social media platform. Bright, optimistic mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXImPXiAqHuuCHs3_nZGaJ2bclyArJPS9alVkIG73lUWSll0XnaKOeNIyRVdBatRCAkYM8mXSyD-Sx-pj63ELP2pDB4KZnrMPn3QH6iEU63syXVEIdpWtDcoJnSJmDmKxjc8ekE7qCOzQkt4EK0u5L8KIe8wvfvA3ShXoneVtKMlVmFnRcYay6BKK8cy_I-ox3ke8cdFEYqlkByjZsS9Wua3YclptStWmQWGsl9IqCCSrXO18_JqatOIJkt89itbUmitlkPM4_xjw"/>
+<textarea class="w-full bg-transparent border-none focus:ring-0 resize-none font-body-md text-body-md text-on-surface placeholder-secondary p-0 min-h-[80px]" placeholder="Write a caption..."></textarea>
+</div>
+<!-- Options List -->
+<div class="bg-white rounded-2xl border border-surface-container-highest shadow-sm overflow-hidden">
+<!-- Add Location -->
+<button class="w-full flex items-center justify-between p-stack-md border-b border-surface-variant hover:bg-surface-container-low transition-colors active:bg-surface-container">
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 0;">location_on</span>
+<span class="font-body-md text-body-md text-on-surface">Add Location</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</button>
+<!-- Tag People -->
+<button class="w-full flex items-center justify-between p-stack-md border-b border-surface-variant hover:bg-surface-container-low transition-colors active:bg-surface-container">
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 0;">person_add</span>
+<span class="font-body-md text-body-md text-on-surface">Tag People</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</button>
+<!-- Music -->
+<button class="w-full flex items-center justify-between p-stack-md border-b border-surface-variant hover:bg-surface-container-low transition-colors active:bg-surface-container">
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 0;">music_note</span>
+<span class="font-body-md text-body-md text-on-surface">Add Music</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</button>
+<!-- Advanced Settings -->
+<button class="w-full flex items-center justify-between p-stack-md hover:bg-surface-container-low transition-colors active:bg-surface-container">
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 0;">settings</span>
+<span class="font-body-md text-body-md text-on-surface">Advanced Settings</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on desktop, shown on mobile as per design system) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 pb-safe bg-white/80 dark:bg-on-surface/80 backdrop-blur-xl flex justify-around items-center h-16 px-4 border-t border-secondary-fixed/50 dark:border-outline-variant/30 shadow-lg dark:shadow-none hanken-font">
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container/30 dark:hover:bg-surface-container-highest/10 rounded-full active:scale-90 transition-all duration-200 w-12 h-12">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container/30 dark:hover:bg-surface-container-highest/10 rounded-full active:scale-90 transition-all duration-200 w-12 h-12">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+<span class="font-label-sm text-label-sm mt-1">Search</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary dark:text-inverse-primary scale-110 active:scale-90 transition-all duration-200 w-12 h-12 relative">
+<div class="absolute inset-0 bg-primary/10 rounded-full scale-125 blur-sm"></div>
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="sr-only">Add Post</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container/30 dark:hover:bg-surface-container-highest/10 rounded-full active:scale-90 transition-all duration-200 w-12 h-12">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+<span class="font-label-sm text-label-sm mt-1">Alerts</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container/30 dark:hover:bg-surface-container-highest/10 rounded-full active:scale-90 transition-all duration-200 w-12 h-12">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</button>
+</nav>
+<!-- JS for Textarea Auto-resize -->
+<script>
+        const textarea = document.querySelector('textarea');
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+    </script>
+</body></html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>تعديل الملف الشخصي - Aspirational</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#c4c7ca",
+                    "on-secondary": "#ffffff",
+                    "outline": "#7a7582",
+                    "surface-variant": "#e2e2e2",
+                    "surface-container": "#eeeeee",
+                    "tertiary-fixed": "#ffdf93",
+                    "surface-container-low": "#f3f3f3",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#cfbcff",
+                    "inverse-surface": "#303030",
+                    "on-surface-variant": "#494551",
+                    "on-primary-container": "#e0d2ff",
+                    "inverse-primary": "#cfbcff",
+                    "on-secondary-fixed": "#191c1f",
+                    "surface-container-high": "#e8e8e8",
+                    "background": "#f9f9f9",
+                    "inverse-on-surface": "#f1f1f1",
+                    "on-tertiary-fixed-variant": "#594400",
+                    "surface-dim": "#dadada",
+                    "secondary-container": "#dee0e4",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#1b1b1b",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-tertiary-container": "#503d00",
+                    "tertiary-container": "#c9a74d",
+                    "outline-variant": "#cbc4d2",
+                    "primary-fixed": "#e9ddff",
+                    "primary-container": "#6750a4",
+                    "surface-bright": "#f9f9f9",
+                    "primary": "#4f378a",
+                    "tertiary": "#765b00",
+                    "surface-tint": "#6750a4",
+                    "on-secondary-fixed-variant": "#44474a",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1b1b1b",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-secondary-container": "#606366",
+                    "secondary": "#5c5f62",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#4f378a",
+                    "surface": "#f9f9f9",
+                    "secondary-fixed": "#e0e2e6",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#22005d",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#e7c365",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "16px",
+                    "unit": "4px",
+                    "stack-lg": "24px",
+                    "margin-page": "16px",
+                    "gutter-grid": "12px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Hanken Grotesk"],
+                    "label-lg": ["Hanken Grotesk"],
+                    "display-lg-mobile": ["Hanken Grotesk"],
+                    "body-sm": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "headline-sm": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-md": ["17px", {"lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "label-lg": ["13px", {"lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "800"}],
+                    "body-sm": ["15px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-sm": ["11px", {"lineHeight": "13px", "letterSpacing": "0.06em", "fontWeight": "500"}],
+                    "headline-sm": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["34px", {"lineHeight": "41px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .glass-panel { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.5); }
+        .ambient-shadow { box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.04), 0 4px 12px -2px rgba(0, 0, 0, 0.02); }
+        .gradient-text { background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .primary-gradient { background: linear-gradient(135deg, #4f378a 0%, #6750a4 100%); }
+        
+        /* Form Field Styles */
+        .premium-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #E5E7EB;
+            padding: 8px 0;
+            color: #1b1b1b;
+            transition: all 0.2s ease;
+        }
+        .premium-input:focus {
+            outline: none;
+            border-bottom-color: #4f378a;
+            box-shadow: 0 1px 0 0 #4f378a;
+        }
+        .premium-input::placeholder {
+            color: #c4c7ca;
+        }
+        
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom, 20px); }
+        .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top App Bar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-on-surface/80 backdrop-blur-xl border-b border-secondary-fixed/50 pt-safe">
+<div class="flex justify-between items-center px-margin-page h-14 w-full md:max-w-[600px] md:mx-auto">
+<button class="text-on-surface-variant font-body-md text-body-md hover:opacity-70 transition-opacity active:scale-95">إلغاء</button>
+<h1 class="font-headline-sm text-headline-sm-mobile md:text-headline-sm text-on-surface">تعديل الملف الشخصي</h1>
+<button class="text-primary font-body-md text-body-md font-semibold hover:opacity-70 transition-opacity active:scale-95">تم</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[calc(56px+env(safe-area-inset-top))] pb-[calc(80px+env(safe-area-inset-bottom))] px-margin-page md:max-w-[600px] md:mx-auto min-h-screen flex flex-col gap-stack-lg">
+<!-- Profile Picture Section -->
+<section class="flex flex-col items-center justify-center pt-stack-md">
+<div class="relative group cursor-pointer active:scale-95 transition-transform duration-200">
+<div class="w-24 h-24 rounded-full overflow-hidden border-2 border-surface-container shadow-md">
+<img alt="صورة الملف الشخصي" class="w-full h-full object-cover" data-alt="A high-quality, perfectly lit portrait of a stylish young individual against a clean, minimalist background. The lighting is soft and flattering, creating a premium light-mode aesthetic. The color palette is composed of pristine whites, subtle greys, and warm skin tones, aligning perfectly with a modern, high-end social media application. The mood is confident and approachable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ1qZE7hqE5_LsX_LVmcyGZn0mXbtIE4_e2Tbh-R7R2RHE5-QbYrQ8sIdhXnynk--4TpcRknGaqLkzk9sTVO6Abk1jDMG1bZWgpudkwu7fVzo6laxaoo0cU-pbeWBuHGnqKijjkytawo2Y3c6EoL6tIX50oKapeSJff7GN3lAESHz_CuVCbu7aoQRJNrtApqtWU0jpaid4KCy0zAn5VkGUDG8AJv75ZvAwa5OTghOuF-ePXfmWIg6N-27xtAvdaqnxIRIj1F9It24"/>
+</div>
+<div class="absolute inset-0 bg-black/40 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">camera_alt</span>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-primary w-8 h-8 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">edit</span>
+</div>
+</div>
+</section>
+<!-- Form Fields Section -->
+<section class="flex flex-col gap-stack-md glass-panel p-stack-md rounded-xl ambient-shadow">
+<!-- Name Field -->
+<div class="flex flex-col gap-unit relative">
+<label class="font-label-lg text-label-lg text-secondary" for="name">الاسم</label>
+<input class="premium-input font-body-md text-body-md" id="name" placeholder="أدخل اسمك" type="text" value="سارة أحمد"/>
+</div>
+<!-- Username Field -->
+<div class="flex flex-col gap-unit relative mt-unit">
+<label class="font-label-lg text-label-lg text-secondary" for="username">اسم المستخدم</label>
+<input class="premium-input font-body-md text-body-md" dir="ltr" id="username" placeholder="اسم المستخدم" type="text" value="@sara_design"/>
+</div>
+<!-- Bio Field -->
+<div class="flex flex-col gap-unit relative mt-unit">
+<div class="flex justify-between items-center">
+<label class="font-label-lg text-label-lg text-secondary" for="bio">النبذة التعريفية</label>
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim">34/150</span>
+</div>
+<textarea class="premium-input font-body-md text-body-md resize-none" id="bio" placeholder="اكتب شيئاً عنك..." rows="3">مصممة واجهات استخدام مهتمة بالتفاصيل والجماليات البسيطة ✨</textarea>
+</div>
+</section>
+<!-- Links Section -->
+<section class="flex flex-col gap-stack-md glass-panel p-stack-md rounded-xl ambient-shadow mt-unit">
+<h2 class="font-label-lg text-label-lg text-secondary mb-unit">الروابط</h2>
+<div class="flex items-center gap-stack-md py-stack-sm border-b border-surface-variant">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 0;">link</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="font-body-md text-body-md text-on-surface truncate" dir="ltr">dribbble.com/saradesign</p>
+</div>
+<button class="text-error p-2 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">do_not_disturb_on</span>
+</button>
+</div>
+<button class="flex items-center gap-stack-sm py-stack-sm text-primary active:opacity-70 transition-opacity w-fit mt-unit">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">add</span>
+</div>
+<span class="font-label-lg text-label-lg">إضافة رابط</span>
+</button>
+</section>
+<!-- Privacy Section (Bento Style) -->
+<section class="grid grid-cols-2 gap-gutter-grid mt-unit">
+<div class="glass-panel p-stack-md rounded-xl ambient-shadow flex flex-col items-center justify-center text-center gap-stack-sm active:scale-95 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 0;">lock</span>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">إعدادات الخصوصية</h3>
+<p class="font-label-sm text-label-sm text-secondary mt-1">تحديد من يمكنه رؤية ملفك</p>
+</div>
+</div>
+<div class="glass-panel p-stack-md rounded-xl ambient-shadow flex flex-col items-center justify-center text-center gap-stack-sm active:scale-95 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 0;">switch_account</span>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface">تبديل الحساب</h3>
+<p class="font-label-sm text-label-sm text-secondary mt-1">احترافي أو شخصي</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Nav Bar (Suppressed as this is a task-focused screen with Cancel/Done actions) -->
+<!-- Navigation intentionally omitted per Semantic Shell Mandate: "Task-Focused: Any sub-page featuring a 'Close' or 'Back' action that implies a temporary departure from the main navigation flow." -->
+</body></html>
