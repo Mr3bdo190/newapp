@@ -25,22 +25,38 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: IndexedStack(index: _currentIndex, children: _pages),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
-        selectedItemColor: const Color(0xFF4F378A),
-        unselectedItemColor: Colors.grey,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        onTap: (index) => setState(() => _currentIndex = index),
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Explore'),
-          BottomNavigationBarItem(icon: Icon(Icons.video_collection_rounded), label: 'Reels'),
-          BottomNavigationBarItem(icon: Icon(Icons.chat_bubble_outline_rounded), label: 'Chat'),
-          BottomNavigationBarItem(icon: Icon(Icons.person_rounded), label: 'Profile'),
-        ],
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 24, offset: const Offset(0, -4))],
+        ),
+        child: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.white.withOpacity(0.9),
+          elevation: 0,
+          selectedItemColor: const Color(0xFF4F378A),
+          unselectedItemColor: const Color(0xFF5C5F62),
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          onTap: (index) => setState(() => _currentIndex = index),
+          items: [
+            const BottomNavigationBarItem(icon: Icon(Icons.home_rounded, size: 28), label: 'Home'),
+            const BottomNavigationBarItem(icon: Icon(Icons.search_rounded, size: 28), label: 'Explore'),
+            BottomNavigationBarItem(
+              icon: Container(
+                padding: const EdgeInsets.all(8),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: LinearGradient(colors: [Color(0xFF00F2FE), Color(0xFF4F378A)]),
+                ),
+                child: const Icon(Icons.add, color: Colors.white, size: 24),
+              ),
+              label: 'Add',
+            ),
+            const BottomNavigationBarItem(icon: Icon(Icons.chat_bubble_outline_rounded, size: 28), label: 'Chat'),
+            const BottomNavigationBarItem(icon: Icon(Icons.person_outline_rounded, size: 28), label: 'Profile'),
+          ],
+        ),
       ),
     );
   }
